@@ -1371,3 +1371,8 @@ a:hover{
     color: #14ce80;
     text-decoration: underline;
 }
+
+.dextools{
+    width: 80px;
+    height: fit-content;
+}
