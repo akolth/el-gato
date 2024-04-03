@@ -246,7 +246,7 @@
                         <img src="assets/images/gato-faces/72145E69-EE8C-472D-BD9F-F1D662343DB5.png" class="gato-face" alt="img" />
                         <img src="assets/images/gato-faces/83D25097-7454-4BCD-9B02-8421F40E6E06.png" class="gato-face" alt="img" />
                         <img src="assets/images/gato-faces/8D5852EA-E263-4D43-B79B-7C7F26C1D377.png" class="gato-face" alt="img" />
-                        <img src="assets/images/gato-faces/nugatohead.PNG" class="gato-face" alt="img" />
+                        <img src="assets/images/gato-faces/F95478C8-DCD7-4803-8271-0276981D232A.png" class="gato-face" alt="img" />
                         <img src="assets/images/gato-faces/FDE5EACB-E9B4-4981-9F77-448970F93347.png" class="gato-face" alt="img" />
                
                        </div>
@@ -364,7 +364,6 @@ addOverlayBtn.addEventListener('click', function() {
 
  
 
-// Handle resizing of the overlay image from the center
 resizeControl.addEventListener('input', function () {
     if (baseImage && overlayImage) {
         const newScale = resizeControl.value / 100;
@@ -378,7 +377,6 @@ resizeControl.addEventListener('input', function () {
     }
 });
 
-// Handle rotation of the overlay image
 rotateControl.addEventListener('input', function() {
     overlayRotation = parseInt(rotateControl.value);
     drawImages();
@@ -477,11 +475,9 @@ function calculateOverlayScale() {
     }
 }
 
-// Start dragging overlay image
 function startDragging(e) {
     const rect = canvas.getBoundingClientRect();
     let clientX, clientY;
-
     if (e.type === 'mousedown') {
         clientX = e.clientX;
         clientY = e.clientY;
@@ -499,12 +495,10 @@ function startDragging(e) {
         dragStartX = mouseX - overlayPosition.x;
         dragStartY = mouseY - overlayPosition.y;
 
-        // Prevent document scrolling during dragging on mobile
         document.addEventListener('touchmove', preventDocumentScroll, { passive: false });
     }
 }
 
-// Drag overlay image
 function dragImage(e) {
     if (isDragging) {
         const rect = canvas.getBoundingClientRect();
@@ -555,7 +549,7 @@ resetBtn.addEventListener('click', function() {
   
     preview.style.border ="none";
     preview.style.backgroundColor = "#de1fb75c";
-    loadImage("./images/chonkys/upload-icon.png", true);
+    loadImage("./assets/images/gato-faces/bg.png", true);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     baseImage = null;
     overlayImage = null;
@@ -618,16 +612,13 @@ downloadBtn.addEventListener('click', function() {
 });
 
 
-// Function to set canvas dimensions dynamically
 function setCanvasDimensions() {
     const maxWidthMobile = 300; // Maximum width for mobile
 
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    // Check if it's a mobile device (you can adjust this condition as needed)
-    const isMobile = viewportWidth <= 768; // Adjust the breakpoint if necessary
-
+    const isMobile = viewportWidth <= 768; 
     if (isMobile) {
         canvas.width = maxWidthMobile;
         canvas.height = maxWidthMobile; // Set the canvas width and height to 300px for mobile
@@ -660,7 +651,7 @@ function setCanvasDimensions() {
 }
 
 
-loadImage("./images/chonkys/upload-icon.png", true);
+loadImage("./assets/images/gato-faces/bg.png", true);
 
 document.addEventListener("DOMContentLoaded", () => {
         const scrollAmount = 200;
